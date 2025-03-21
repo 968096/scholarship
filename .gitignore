@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Angular
+dist/
+.angular/
+.angular-cache/
+
+# Maven
+target/
+
+# Logs
+*.log
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Outros
+.env
+.cache/
+coverage/
