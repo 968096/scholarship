@@ -1,0 +1,4 @@
+ScholarshipDashboardApplication.class
+com/example/scholarshipdashboard/controller/DashboardController.class
+com/example/scholarshipdashboard/service/DashboardService.class
+com/example/scholarshipdashboard/model/Scholarship.class
