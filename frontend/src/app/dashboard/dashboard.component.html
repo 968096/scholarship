@@ -12,7 +12,7 @@
       <tr *ngFor="let scholarship of scholarships">
         <td>{{ scholarship.title }}</td>
         <td>{{ scholarship.description }}</td>
-        <td>{{ scholarship.amount | currency }}</td>
+        <td>{{ scholarship.amount | currency:'USD' }}</td>
       </tr>
     </tbody>
   </table>

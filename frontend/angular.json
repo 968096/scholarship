@@ -7,7 +7,7 @@
   "projects": {
     "scholarship-dashboard": {
       "projectType": "application",
-      "root": "frontend",
+      "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -48,8 +48,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2kb",
-                  "maximumError": "5kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ]
             }

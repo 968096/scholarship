@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
+import { Scholarship } from '../models/scholarship.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,7 @@ import { DashboardService } from './dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  scholarships: any[] = [];
+  scholarships: Scholarship[] = [];
 
   constructor(private dashboardService: DashboardService) { }
 
@@ -17,7 +18,7 @@ export class DashboardComponent implements OnInit {
 
   loadScholarships(): void {
     this.dashboardService.getScholarships().subscribe(
-      (data: any[]) => {
+      (data: Scholarship[]) => {
         this.scholarships = data;
       },
       (error) => {
