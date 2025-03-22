@@ -16,5 +16,3 @@ export class DashboardService {
     return this.http.get<Scholarship[]>(this.apiUrl);
   }
 }
-
-const newScholarship = new Scholarship(null, "Title", "Description", 1000.0);
