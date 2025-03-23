@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "export NODE_OPTIONS=--openssl-legacy-provider && ng serve",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && ng build",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy:netlify": "ng build --prod && netlify deploy --prod"
   },
   "dependencies": {
     "@angular/animations": "~12.2.0",

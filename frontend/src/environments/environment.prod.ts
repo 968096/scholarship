@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.example.com' // Substitua pela URL correta do backend em produção
+  apiUrl: 'https://scholarship-dashboard-api.onrender.com/api' // Substitua pela URL fornecida pelo Render
 };
