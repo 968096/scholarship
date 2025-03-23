@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Scholarship } from '../models/scholarship.model';
@@ -31,10 +31,20 @@ export class DashboardService {
   }
 
   searchScholarships(title: string): Observable<Scholarship[]> {
-    const searchUrl = `${this.apiUrl}/search?title=${encodeURIComponent(title)}`;
-    console.log('Searching scholarships at:', searchUrl);
-    return this.http.get<Scholarship[]>(searchUrl).pipe(
-      tap(data => console.log('Search results:', data)),
+    // Usando HttpParams para evitar problemas de codificação de URL
+    let params = new HttpParams();
+    if (title) {
+      params = params.set('title', title);
+    }
+    
+    const searchUrl = `${this.apiUrl}/search`;
+    console.log('Searching scholarships at:', searchUrl, 'with params:', params.toString());
+    
+    return this.http.get<Scholarship[]>(searchUrl, { params }).pipe(
+      tap(data => {
+        console.log('Search results:', data);
+        console.log('Search results count:', data.length);
+      }),
       catchError((error) => {
         console.error('Error searching scholarships:', error);
         return throwError(error);

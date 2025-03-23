@@ -2,39 +2,49 @@
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #f4f4f4; /* Cinza claro */
 }
 
 .search-section {
-  margin-bottom: 30px;
-  background: #fff;
+  background-color: #003366; /* Azul escuro (IPB) */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  color: #ffffff; /* Branco */
+}
+
+.search-info {
+  margin-bottom: 10px;
+  color: #d9e6f2; /* Azul claro */
+  font-style: italic;
 }
 
 .search-box {
   display: flex;
   gap: 10px;
+  margin-top: 10px;
   align-items: center;
 }
 
 .search-box input {
   flex: 1;
-  padding: 12px;
-  border: 2px solid #ddd;
+  padding: 10px;
+  border: 1px solid #00509e; /* Azul médio */
   border-radius: 4px;
   font-size: 16px;
   transition: border-color 0.3s;
+  background-color: #ffffff; /* Branco */
+  color: #003366; /* Azul escuro */
 }
 
 .search-box input:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #0074cc; /* Azul mais vibrante */
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
+  padding: 10px 15px;
+  background-color: #00509e; /* Azul médio */
   color: white;
   border: none;
   border-radius: 4px;
@@ -43,50 +53,51 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #003366; /* Azul escuro */
 }
 
 button.reset {
-  background-color: #666;
+  background-color: #0074cc; /* Azul vibrante */
 }
 
 button.reset:hover {
-  background-color: #555;
+  background-color: #00509e; /* Azul médio */
 }
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
   gap: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .stat-card {
-  background: #fff;
-  padding: 20px;
+  flex: 1;
+  background-color: #ffffff; /* Branco */
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  color: #003366; /* Azul escuro */
 }
 
 .stat-card h3 {
-  margin: 0;
-  color: #666;
+  margin-top: 0;
+  color: #00509e; /* Azul médio */
   font-size: 16px;
 }
 
 .stat-card p {
-  margin: 10px 0 0;
   font-size: 24px;
   font-weight: bold;
-  color: #2196F3;
+  margin: 10px 0 0;
+  color: #0074cc; /* Azul vibrante */
 }
 
 .table-container {
-  background: #fff;
-  padding: 20px;
+  background-color: #ffffff; /* Branco */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   overflow-x: auto;
 }
 
@@ -96,31 +107,43 @@ table {
 }
 
 th {
-  background-color: #f5f5f5;
-  font-weight: bold;
+  background-color: #003366; /* Azul escuro */
+  color: white;
+  padding: 12px;
+  text-align: left;
 }
 
 td, th {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #d9e6f2; /* Azul claro */
 }
 
 tr:hover {
-  background-color: #f5f5f5;
+  background-color: #f4f4f4; /* Cinza claro */
 }
 
 .no-results {
+  padding: 20px;
   text-align: center;
-  padding: 40px;
-  color: #666;
+  color: #00509e; /* Azul médio */
 }
 
-.search-info {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #e3f2fd;
-  border-radius: 4px;
-  color: #1976d2;
-  font-size: 14px;
+.error-message {
+  background-color: #b71c1c; /* Vermelho escuro */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #00509e; /* Azul médio */
+}
+
+.search-tip {
+  color: #d9e6f2; /* Azul claro */
+  font-style: italic;
 }

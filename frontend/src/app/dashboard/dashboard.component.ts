@@ -40,6 +40,7 @@ export class DashboardComponent implements OnInit {
   }
 
   searchScholarships(): void {
+    // Melhorado o tratamento para termos de busca vazios
     if (!this.searchTitle.trim()) {
       this.loadScholarships();
       return;
@@ -47,11 +48,15 @@ export class DashboardComponent implements OnInit {
     
     this.loading = true;
     this.error = null;
-    console.log('Searching scholarships with title:', this.searchTitle);
     
-    this.dashboardService.searchScholarships(this.searchTitle).subscribe(
+    // Limpar espaços extras e fazer trim no termo de busca
+    const searchTerm = this.searchTitle.trim();
+    console.log('Searching scholarships with title:', searchTerm);
+    
+    this.dashboardService.searchScholarships(searchTerm).subscribe(
       (data: Scholarship[]) => {
         console.log('Search results:', data);
+        console.log('Search result count:', data.length);
         this.scholarships = data;
         this.loading = false;
       },
