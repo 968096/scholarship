@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/scholarships")
+@RequestMapping("/api/dashboard") // Changed from "/api/scholarships" to "/api/dashboard"
 public class DashboardController {
 
     private final DashboardService dashboardService;
@@ -19,12 +19,12 @@ public class DashboardController {
         this.dashboardService = dashboardService;
     }
 
-    @GetMapping
+    @GetMapping("/scholarships")  // Changed to "/scholarships"
     public List<Scholarship> getAllScholarships() {
         return dashboardService.getAllScholarships();
     }
 
-    @GetMapping("/search")
+    @GetMapping("/scholarships/search")  // Changed to "/scholarships/search"
     public List<Scholarship> searchScholarships(@RequestParam String title) {
         return dashboardService.searchScholarshipsByTitle(title);
     }
