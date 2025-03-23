@@ -1,21 +1,51 @@
 <div class="dashboard">
-  <h1>Scholarship Dashboard</h1>
-  <input type="text" [(ngModel)]="searchTitle" placeholder="Search by title" />
-  <button (click)="searchScholarships()">Search</button>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let scholarship of scholarships">
-        <td>{{ scholarship.title }}</td>
-        <td>{{ scholarship.description }}</td>
-        <td>{{ scholarship.amount | currency:'USD' }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="search-section">
+    <h2>Pesquisar Bolsas</h2>
+    <div class="search-info">
+      Exemplos de busca: "Web", "Machine Learning", "Desenvolvimento"
+    </div>
+    <div class="search-box">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTitle" 
+        placeholder="Digite o título da bolsa..." 
+        (keyup.enter)="searchScholarships()"
+      />
+      <button (click)="searchScholarships()">Buscar</button>
+      <button class="reset" (click)="resetSearch()">Mostrar Todas</button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <h3>Total de Bolsas</h3>
+      <p>{{scholarships.length}}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Valor Médio</h3>
+      <p>{{getAverageAmount() | currency:'BRL'}}</p>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table *ngIf="scholarships.length > 0">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let scholarship of scholarships">
+          <td>{{scholarship.title}}</td>
+          <td>{{scholarship.description}}</td>
+          <td>{{scholarship.amount | currency:'BRL'}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="no-results" *ngIf="scholarships.length === 0">
+      <p>Nenhuma bolsa encontrada. Tente outros termos de busca.</p>
+    </div>
+  </div>
 </div>

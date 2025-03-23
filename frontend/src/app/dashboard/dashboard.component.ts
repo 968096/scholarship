@@ -38,4 +38,15 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
+  resetSearch(): void {
+    this.searchTitle = '';
+    this.loadScholarships();
+  }
+
+  getAverageAmount(): number {
+    if (this.scholarships.length === 0) return 0;
+    const total = this.scholarships.reduce((sum, scholarship) => sum + scholarship.amount, 0);
+    return total / this.scholarships.length;
+  }
 }

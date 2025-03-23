@@ -14,18 +14,6 @@ public class Scholarship {
     private String description;
     private Double amount;
 
-    // No-argument constructor
-    public Scholarship() {
-    }
-
-    // Constructor with all fields
-    public Scholarship(Long id, String title, String description, Double amount) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.amount = amount;
-    }
-
     // Getters and setters
     public Long getId() {
         return id;
