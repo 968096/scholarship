@@ -9,6 +9,7 @@ import { Scholarship } from '../models/scholarship.model';
 })
 export class DashboardComponent implements OnInit {
   scholarships: Scholarship[] = [];
+  searchTitle: string = '';
 
   constructor(private dashboardService: DashboardService) { }
 
@@ -23,6 +24,17 @@ export class DashboardComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching scholarships', error);
+      }
+    );
+  }
+
+  searchScholarships(): void {
+    this.dashboardService.searchScholarships(this.searchTitle).subscribe(
+      (data: Scholarship[]) => {
+        this.scholarships = data;
+      },
+      (error) => {
+        console.error('Error searching scholarships', error);
       }
     );
   }

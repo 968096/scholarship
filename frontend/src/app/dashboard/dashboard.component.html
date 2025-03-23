@@ -1,5 +1,7 @@
 <div class="dashboard">
   <h1>Scholarship Dashboard</h1>
+  <input type="text" [(ngModel)]="searchTitle" placeholder="Search by title" />
+  <button (click)="searchScholarships()">Search</button>
   <table>
     <thead>
       <tr>

@@ -22,4 +22,13 @@ export class DashboardService {
       })
     );
   }
+
+  searchScholarships(title: string): Observable<Scholarship[]> {
+    return this.http.get<Scholarship[]>(`${this.apiUrl}/search?title=${title}`).pipe(
+      catchError((error) => {
+        console.error('Error searching scholarships:', error);
+        return throwError(error);
+      })
+    );
+  }
 }

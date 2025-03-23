@@ -4,6 +4,7 @@ import com.example.scholarshipdashboard.model.Scholarship;
 import com.example.scholarshipdashboard.service.DashboardService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,5 +22,10 @@ public class DashboardController {
     @GetMapping
     public List<Scholarship> getAllScholarships() {
         return dashboardService.getAllScholarships();
+    }
+
+    @GetMapping("/search")
+    public List<Scholarship> searchScholarships(@RequestParam String title) {
+        return dashboardService.searchScholarshipsByTitle(title);
     }
 }

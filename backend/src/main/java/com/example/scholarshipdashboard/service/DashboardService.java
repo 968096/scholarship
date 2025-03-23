@@ -17,4 +17,10 @@ public class DashboardService {
     public List<Scholarship> getAllScholarships() {
         return entityManager.createQuery("SELECT s FROM Scholarship s", Scholarship.class).getResultList();
     }
+
+    public List<Scholarship> searchScholarshipsByTitle(String title) {
+        return entityManager.createQuery("SELECT s FROM Scholarship s WHERE s.title LIKE :title", Scholarship.class)
+                            .setParameter("title", "%" + title + "%")
+                            .getResultList();
+    }
 }
